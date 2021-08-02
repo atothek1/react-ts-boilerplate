@@ -1,0 +1,146 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": ".",
+    "project": ["tsconfig.eslint.json"],
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "extraFileExtensions":[ ".mock.js", ".spec.ts", ".spec.tsx", ".d.ts" ]
+  },
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint/eslint-plugin"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "__NAME__": "readonly",
+    "__VERSION__": "readonly",
+    "__CONFIG__": "readonly",
+    "__ENVIRONMENT__": "readonly",
+    "__IS_DEVELOPMENT__": "readonly",
+    "__IS_PRODUCTION__": "readonly"
+  },
+  "ignorePatterns": [
+    "**/coverage/*",
+    "**/dist/*",
+    "**/temp/*"
+  ],
+  "rules": {
+    // general code style settings
+    "indent": [ "error", 4, { "SwitchCase": 1 } ],
+    "quotes": [ "error", "double" ],
+    "max-len": [ "error", 300 ],
+    "padded-blocks": "off",
+    "eol-last": [ "error", "always" ],
+
+    // space settings
+    "space-in-parens": [ "error", "always" ],
+    "array-bracket-spacing": [ "error", "always" ],
+    "computed-property-spacing": [ "error", "always" ],
+    "object-curly-spacing": [ "error", "always", { "arraysInObjects": true, "objectsInObjects": true } ],
+    "object-property-newline": "error",
+    "template-curly-spacing": [ "error", "always" ],
+
+    // project convient settings
+    "no-underscore-dangle": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+
+    // best practices
+    "arrow-parens": [ "error", "as-needed", { "requireForBlockBody": true } ],
+    "semi": [ "error", "always" ],
+
+    // react plugin
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }],
+    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 4 ],
+    "react/jsx-curly-spacing": [ "error", "always" ],
+    "react-hooks/exhaustive-deps": "error",
+    "react/require-default-props": [ "error", {
+      "forbidDefaultForRequired": true,
+      "ignoreFunctionalComponents": true
+    } ],
+    "react/button-has-type":"off",
+
+    // imports plugin
+    // "import/extensions": "off",
+    "import/no-default-export": "error",
+    "import/no-cycle": [ "error", { "maxDepth": 1 } ],
+
+    // typescript plugin
+    // "@typescript-eslint/no-unsafe-assignment": "off",
+    // "@typescript-eslint/no-unsafe-call": "off",
+    // "@typescript-eslint/no-empty-interface": "off",
+    // "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/indent": [ "error", 4 ],
+    "@typescript-eslint/quotes": [ "error", "double" ],
+    "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ]
+    // as there is no support to detect inferred return types this rule is more counterintuitive
+    /*"@typescript-eslint/explicit-function-return-type": [ "error", {
+      "allowExpressions": true,
+      "allowTypedFunctionExpressions": true,
+      "allowHigherOrderFunctions": true
+    } ]*/
+  },
+  "overrides": [
+    {
+      "files": [ "*.js", "*.jsx" ],
+      "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/no-dynamic-require": "off",
+        "global-require": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/require-await": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    // Apply special parsing for TypeScript files
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "tsconfig.eslint.json"
+      },
+      "react": {},
+      "node": {
+        "extensions": [".mjs", ".js", ".json", ".ts", ".d.ts"]
+      }
+    },
+    "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
+    // Resolve type definition packages
+    "import/external-module-folders": ["node_modules", "node_modules/@types"]
+  }
+}
