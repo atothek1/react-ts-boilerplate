@@ -59,11 +59,14 @@
       "@res/*": [
         "./res/*"
       ],
-      "@type/*": [
-        "src/types/*"
+      "@mocks": [
+        "src/__mocks__/index.ts"
       ],
       "@mocks/*": [
         "src/__mocks__/*"
+      ],
+      "@tests": [
+        "src/__tests__/index.ts"
       ],
       "@tests/*": [
         "src/__tests__/*"

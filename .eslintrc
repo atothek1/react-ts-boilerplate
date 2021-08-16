@@ -95,12 +95,6 @@
     "@typescript-eslint/indent": [ "error", 4 ],
     "@typescript-eslint/quotes": [ "error", "double" ],
     "@typescript-eslint/restrict-template-expressions": [ "error", { "allowNullish": true, "allowAny": true } ]
-    // as there is no support to detect inferred return types this rule is more counterintuitive
-    /*"@typescript-eslint/explicit-function-return-type": [ "error", {
-      "allowExpressions": true,
-      "allowTypedFunctionExpressions": true,
-      "allowHigherOrderFunctions": true
-    } ]*/
   },
   "overrides": [
     {

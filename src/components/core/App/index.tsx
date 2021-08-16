@@ -1,3 +1,4 @@
+import { GlobalStyles } from "@components/core/GlobalStyles";
 import React, { StrictMode } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -21,6 +22,7 @@ export function App( props: AppProps ) {
     return (
         <StrictMode>
             <ErrorBoundary FallbackComponent={ ErrorFallback }>
+                <GlobalStyles />
                 <Router>
                     <Routing routes={ routes } />
                 </Router>

@@ -76,8 +76,7 @@ module.exports = ( rootPath, packagePath ) => {
                             loader: "css-loader",
                             options: {
                                 modules: {
-                                    localIdentName: "[folder]-[name]__[local]--[hash:base64:8]",
-                                    localIdentHashPrefix: "mono",
+                                    localIdentName: "mono-[name]__[local]--[hash:base64:8]",
                                 },
                                 sourceMap: isDevelopmentBuild(),
                             },

@@ -4,13 +4,13 @@ import { RouteConfig } from "@typings";
 export function getRoutes(): RouteConfig[] {
     return [
         {
-            id: "home",
+            id: "routes:app:home",
             path:"/home",
             exact: true,
             component: Home
         },
         {
-            id: "redirects:fallback",
+            id: "redirects:app:fallback",
             type: "redirect",
             to: "/home"
         },

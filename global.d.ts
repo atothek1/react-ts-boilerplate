@@ -34,3 +34,14 @@ declare interface MutableDictionary<T = unknown> {
 declare interface TestIdProps {
     readonly testId?: string;
 }
+
+declare module "*.scss" {
+    const content: { readonly [className: string]: string};
+    export = content;
+}
+
+declare module "*.png" {
+    const value: string;
+    // eslint-disable-next-line import/no-default-export
+    export default value;
+}
